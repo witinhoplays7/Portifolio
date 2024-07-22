@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root { /*variáveis que tem valores definidos para qualquer item estético no projeto (altera o valor na variável, altera em todo o projeto)*/
+    --cor-primaria: #000000;
+    --cor-secundaria: rgb(255, 255, 255);
+}
+
+/* O atalho ctrl k c cria comentarios no texto selecionado */
+
+* { /*seleciona todos os elementos do projeto*/
+    margin: 0;    /*de content até border determina as limitações de cada box dos elementos do projeto*/
+    padding: 0;
+}
+
+body {
+    display:flex;
+    flex-direction: column;
+    height: 100vh; /*o body usa 100% da pagina*/
+    box-sizing:border-box; /*o corpo não sai da caixa do body (não sai da pagina)*/ 
+    background-color:rgb(29, 27, 27);
+    color: var(--cor-secundaria);
+    margin: 0% 0%;
+    padding: 0px 0px 0px 0px;
+    gap: 10px;
+}
+
+.cabecalho {
+    display: flex;
+    gap: 20px;
+    justify-content:flex-start;
+    align-content: space-between;
+    padding: 20px 2%;
+}
+
+.cabecalho__link {
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cabecalho__link:hover {
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+
+.destaque-titulo {
+    color: rgb(128, 126, 223);
+}
+
+.apresentacao {
+    margin: 0% 10% 10%; /*O primeiro valor é para o eixo vertical e o segundo para o horizontal*/
+    display: flex; /*alinhamento usando flex-box*/
+    align-items: center; /*passando para o centro*/
+    justify-content: center;
+    box-sizing: border-box;
+    max-height: 90%;
+    gap: 50px;
+    padding: 150px 0px;
+}
+
+.apresentacao__conteudo {
+    display: flex;
+    padding: 50px 0px;
+    flex-direction: column; /*Alinha as flex-box em colunas ao invés do padrão em linhas*/
+    gap: 30px; /*Define a distância entre as flex-box*/
+    width: 50%; /*largura*/
+    height: 4cm;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 1.25rem;
+    font-family: "Playfair Display", serif;
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 1rem;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.apresentacao__links {
+    display: flex;
+    flex-direction:row;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+    width: 70%;
+    font-size: 1rem;
+}
+
+/* .apresentacao__links__subtitulo { 
+    font-family: "Josefin Sans", sans-serif;
+}*/
+
+.apresentacao__links__botoes {
+    display: flex;
+    justify-content:center;
+    gap: 2%;
+    align-items: center;
+    background-color: var(--cor-secundaria);
+    border: 2px solid; /* Define a espessura o estilo e a cor da borda */
+    border-radius: 8px;
+    padding: 10% 10%; /*O primeiro valor é para o eixo vertical e o segundo para o horizontal*/
+    text-decoration: none; /*Retira o sublinhado do link*/
+    color: var(--cor-primaria);
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+.apresentacao__links__botoes:hover { /*Função hover é para quando o mouse passar em cima do botão*/
+    cursor: pointer;
+    padding: 3%;
+    border: 4px solid var(--cor-primaria);
+    background-color: rgb(97, 94, 94);
+}
+
+.apresentacao__imagem {
+    width: 50%;
+}
+
+.rodape {
+    bottom: 0px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.75rem;
+    color: var(--cor-secundaria);
+    background-color: var(--cor-primaria);
+    padding: 26px 0px;
+    text-align: center;
+}
+
+@media (max-width: 1060px) {
+    .apresentacao{
+        flex-direction: column-reverse;  
+        padding: 0% 0px;
+        justify-content: space-between;
+        gap: 0%;
+        justify-content: center;
+        margin: 10%;
+        height: auto;
+    }
+
+    .apresentacao__imagem {
+   
+    }
+
+    .apresentacao__conteudo {
+        padding: 5% 10%;
+        width: auto;
+        height: auto;
+    }
+
+    .apresentacao__links { 
+        flex-direction: column;
+    }
+
+    .cabecalho {
+        padding: 3%;
+        justify-content: center;
+    }
+}
